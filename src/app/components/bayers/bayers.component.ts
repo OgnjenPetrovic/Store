@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyersService } from '../../shared/services/buyers.service';
 
 @Component({
   selector: 'app-bayers',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BayersComponent implements OnInit {
 
-  constructor() { }
+  allBayers: any[]= [];
+
+  constructor(private bayers: BuyersService) { }
 
   ngOnInit() {
+  		this.allBayers = this.bayers.getBuyers();
+  }
+
+
+  delBuyers(bayer)
+  {
+    this.bayers.delBuyers(bayer);
   }
 
 }
+

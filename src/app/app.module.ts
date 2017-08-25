@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BayersComponent } from './components/bayers/bayers.component';
 import { ProductsComponent } from './components/products/products.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { BuyersService } from './shared/services/buyers.service';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,10 @@ import { LayoutComponent } from './components/layout/layout.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [BuyersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
