@@ -42,5 +42,10 @@ export class BuyersService {
 		this.bayers.splice(index, 1);
   }
   
+   public addBuyers(newBuyer){
+		this.bayers.push(newBuyer);
+}
+
+  
 }
 

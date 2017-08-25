@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuyersService } from '../../shared/services/buyers.service';
+import { Bayer } from '../../components/bayers/bayer'; 
 
 @Component({
   selector: 'app-bayers',
@@ -9,18 +10,29 @@ import { BuyersService } from '../../shared/services/buyers.service';
 export class BayersComponent implements OnInit {
 
   allBayers: any[]= [];
+  newBuyer: Bayer = new Bayer('','','','');
 
-  constructor(private bayers: BuyersService) { }
+
+  constructor(private bayers: BuyersService) {
+
+   }
 
   ngOnInit() {
-  		this.allBayers = this.bayers.getBuyers();
+    this.allBayers = this.bayers.getBuyers();
   }
-
 
   delBuyers(bayer)
   {
-    this.bayers.delBuyers(bayer);
+    this.bayers.delBuyers(bayer)
+  }
+
+  // addBuyer(newBuyer){
+  //   this.bayers.addBuyers(newBuyer);
+  // }
+
+  addBuyer(){
+    this.bayers.addBuyers(this.newBuyer);
+    this.newBuyer = new Bayer('','','','');
   }
 
 }
-

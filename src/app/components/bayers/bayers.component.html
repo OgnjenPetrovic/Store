@@ -24,3 +24,13 @@
       <td><button class="btn btn-danger btn-sm" (click)="delBuyers(bayer)">Remove</button></td>
     </tr>
 </table>
+<h3>ADD BAYERS</h3>
+<div class="col-md-5 pl-0 my-lg-4 my-2">
+    <label for="name">Name:</label>
+    <input [(ngModel)]="newBuyer.firstName" type="text" class="form-control" />
+    <label for="lastName">Last Name:</label>
+    <input [(ngModel)]="newBuyer.lastName" type="text" class="form-control" />
+    <label for="email">Email:</label>
+    <input [(ngModel)]="newBuyer.email" type="text" class="form-control" />
+    <button (click)="addBuyer()" class="btn btn-primary">Add New Buyer</button>
+</div>
