@@ -4,6 +4,7 @@
       <th>Name</th>
       <th>LastName</th>
       <th>Email</th>
+      <th>Check latest purchases</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,9 @@
       <td class="align-middle">
         {{ bayer.email }}
       </td>
+       <td class="align-middle">
+      <a [routerLink]="['/bayers', bayer.id]">Purchases</a>
+       </td>
       <td><button class="btn btn-danger btn-sm" (click)="delBuyers(bayer)">Remove</button></td>
     </tr>
 </table>
@@ -34,3 +38,4 @@
     <input [(ngModel)]="newBuyer.email" type="text" class="form-control" />
     <button (click)="addBuyer()" class="btn btn-primary">Add New Buyer</button>
 </div>
+

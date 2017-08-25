@@ -45,7 +45,13 @@ export class BuyersService {
    public addBuyers(newBuyer){
 		this.bayers.push(newBuyer);
 }
+ 
+ public getBuyer(id){
+	  return this.bayers.find((bayer) => {
+      return bayer['id'] == id;
+    })
+}
 
-  
+
 }
 
